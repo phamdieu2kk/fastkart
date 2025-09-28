@@ -1,6 +1,6 @@
 // SummaryApi.js
 
-// fallback nếu env chưa nạp
+
 const backendDomain = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 const SummaryApi = {

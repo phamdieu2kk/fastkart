@@ -13,6 +13,12 @@ import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
 import About from "../pages/About";
 import ProductList from "../pages/ProductList";
+import Success from "../pages/Success";
+import Cancel from "../pages/Cancel";
+import OrderPage from "../pages/OrderPage";
+import AllOrder from "../pages/AllOrder";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,9 +62,21 @@ const router = createBrowserRouter([
         path : 'cart',
         element : <Cart/>
       },
+      {
+                path : 'success',
+                element : <Success/>
+            },
+            {
+                path : "cancel",
+                element : <Cancel/>
+            },
        {
         path : "search",
         element : <SearchProduct/>
+            },
+             {
+                path : 'order',
+                element : <OrderPage/>
             },
       {
         path: "admin-panel",
@@ -72,6 +90,10 @@ const router = createBrowserRouter([
             path: "all-products",
             element: <AllProducts />
           },
+          {
+                        path : "all-orders",
+                        element : <AllOrder/>
+                    }
           
         ]
       }
