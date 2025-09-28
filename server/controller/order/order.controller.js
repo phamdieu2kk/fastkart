@@ -1,9 +1,24 @@
-// controller/order/orderController.js
-const orderModel = require("../../models/orderProductModel");
+const orderModel = require("../../models/orderProductModel")
 
-const orderController = async (req, res) => {
-  const orders = await orderModel.find({ userId: req.userId }).sort({ createdAt: -1 });
-  res.json({ success: true, message: "Order list", data: orders });
-};
+const orderController = async(request,response)=>{
+    try {
+        const currentUserId = request.userId
 
-module.exports = orderController;
+        const orderList = await orderModel.find({ userId : currentUserId }).sort({ createdAt : -1 })
+
+
+        response.json({
+            data : orderList,
+            message : "Order list",
+            success : true
+        })
+
+    } catch (error) {
+        response.status(500).json({
+            message : error.message || error,
+            error : true
+        })
+    }
+}
+
+module.exports = orderController

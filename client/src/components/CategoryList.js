@@ -89,7 +89,7 @@ const CategoryList = () => {
   const placeholders = Array.from({ length: placeholderCount });
 
   return (
-    <div className="container p-4 mx-auto">
+    <div className="container p-4 pt-20 mx-auto"> 
       {/* Desktop */}
       <div className="flex-wrap justify-center hidden gap-4 px-2 py-3 lg:flex">
         {loading
